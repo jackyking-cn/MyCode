@@ -1,0 +1,26 @@
+{
+    "name": "allin",
+    "version": "1.1.0",
+    "root": "allin",
+    "description": "",
+    "homepage": "",
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": ""
+    },
+    "license": "MIT",
+    "dependencies": {
+        "$": "gallery/jquery/1.8.3/jquery",
+        "expect": "gallery/expect/0.2.0/expect",
+        "class": "arale/class/1.0.0/class"
+    },
+    "tests": ["allin", "page-view"],
+    "output": {
+        "allin.js": ".",
+        "page-view.js": "."
+    }
+}

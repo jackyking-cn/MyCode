@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Allin</title>
+        <script src="sea-modules/seajs/1.3.1/sea.js"></script>
+        <script>
+            seajs.config({
+                alias : {
+                    '$': 'gallery/jquery/1.8.3/jquery',
+                    'allin' : './script/allin/allin'
+                }
+            });
+            seajs.use(['allin'], function(allin) {
+                alert(allin.count);
+                allin.init();
+            });
+            seajs.use(['allin'], function(allin) {
+                alert(allin.count);
+                allin.init();
+            });
+        </script>
+        <style>
+            #test {
+                background-color: yellow;
+                height: 200px;
+                line-height: 200px;
+                text-align: center;
+                overflow: hidden;
+                word-break: normal;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="test">
+            click here.
+        </div>
+    </body>
+</html>
