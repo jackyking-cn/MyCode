@@ -15,4 +15,9 @@ define(function(require, exports, module) {
             expect('1').not.to.be(1);
         });
     });
+
+    describe('should', function() {
+        it('[].should', function() {
+        });
+    });
 });
