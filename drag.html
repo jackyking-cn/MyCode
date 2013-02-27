@@ -6,42 +6,48 @@
     <title>Drag</title>
 </head>
 <body>
-    <div id="area" style="margin:30px;height:100px;width:100px;background-color:red;border:3px dashed silver;">
+    <div id="area" style="margin:30px;height:100px;width:100px;background-color:red;border:3px dashed gray;">
         
     </div>
     <script>
         var areaEl = document.getElementById('area');
         areaEl.onmouseup = function(e) {
-            console.log(e);
-            if(e.stopPropagation){
-                e.stopPropagation();
-            }
-            else{
-               e.cancelBubble = true;
-            }
+            // console.log(e);
+            // if (e.stopPropagation) {
+            //     e.stopPropagation();
+            // } else {
+            //    e.cancelBubble = true;
+            // }
         }
         document.addEventListener("dragenter", function(e){  
-            areaEl.style.borderColor = 'gray';
-            console.log(e);
+            areaEl.style.borderColor = 'silver';
+            // console.log(e);
         }, false);  
         document.addEventListener("dragleave", function(e){  
-            areaEl.style.borderColor = 'silver';
+            areaEl.style.borderColor = 'gray';
             console.log(e);
         }, false);
         areaEl.addEventListener("dragenter", function(e){  
-            areaEl.style.borderColor = 'gray';
-            //console.log(e);
-            if(e.stopPropagation){
+            areaEl.style.borderColor = 'blue';
+            console.log(e);
+            if (e.stopPropagation) {
                 e.stopPropagation();
-            }
-            else{
+            } else {
                e.cancelBubble = true;
             }
-        }, false);  
+        }, false);
+        areaEl.addEventListener("drop", function(e) {
+            console.log(e);
+            
+        });
         document.addEventListener("drop", function(e){
             console.log(e);
             console.log(e.dataTransfer.files);
-            e.stopPropagation();
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
             e.preventDefault();
         }, false);
     </script>
