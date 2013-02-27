@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
     var expect = require('expect');
     
-    describe('Test', function() {
+    describe('Boolean', function() {
         it('true', function() {
             expect('test').to.equal('test');
         });
@@ -10,14 +10,25 @@ define(function(require, exports, module) {
         });
     });
     
-    describe('Test1', function() {
+    describe('Equal', function() {
         it('equal', function() {
             expect('1').not.to.be(1);
         });
     });
 
-    describe('should', function() {
-        it('[].should', function() {
+    describe('Exception', function() {
+        it('Exception', function() {
+            var fn = function() {
+                var a
+            };
+            expect(fn).to.not.throwException();
         });
+        it('Error', function() {
+            var fn = function() {
+                a
+            };
+            expect(fn).to.throwError();
+        });
+
     });
 });
