@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="sea-modules/gallery/mocha/1.7.3/mocha.css">
-        <title>Mocha</title>
-        <script src="sea-modules/seajs/1.3.1/sea.js"></script>
-        <script>
-            seajs.config({
-                alias: {
-                    'expect': 'gallery/expect/0.2.0/expect',
-                    'mocha': 'gallery/mocha/1.7.3/mocha'
-                }
-            });
-            // seajs引入的mocha是将其插入到全局变量中,可能是个bug
-            seajs.use(['expect', 'mocha'], function(expect) {
-                // 设置mocha的测试模式
-                mocha.setup('bdd');
-                
-                // 此方法只有在mocha.setup('bdd')执行后才被定义
-                describe('Test', function() {
-                    it('test', function() {
-                        expect('test').to.equal('test');
-                    });
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="sea-modules/gallery/mocha/1.7.3/mocha.css">
+    <title>Mocha</title>
+    <script src="sea-modules/seajs/1.3.1/sea.js"></script>
+    <script>
+        seajs.config({
+            alias: {
+                'expect': 'gallery/expect/0.2.0/expect',
+                'mocha': 'gallery/mocha/1.7.3/mocha'
+            }
+        });
+        // seajs引入的mocha是将其插入到全局变量中,可能是个bug
+        seajs.use(['expect', 'mocha'], function(expect) {
+            // 设置mocha的测试模式
+            mocha.setup('bdd');
+            
+            // 此方法只有在mocha.setup('bdd')执行后才被定义
+            describe('Test', function() {
+                it('test', function() {
+                    expect('test').to.equal('test');
                 });
-                
-                // 运行测试用例
-                mocha.run();
             });
-        </script>
-    </head>
-    <body>
-        <!-- 通过id来标明显示测试结果的地方 -->
-        <div id="mocha">
-        </div>
-    </body>
+            
+            // 运行测试用例
+            mocha.run();
+        });
+    </script>
+</head>
+<body>
+    <!-- 通过id来标明显示测试结果的地方 -->
+    <div id="mocha">
+    </div>
+</body>
 </html>

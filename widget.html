@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Widget</title>
-        <script src="sea-modules/seajs/1.3.1/sea.js"></script>
-        <script>
-            seajs.config({
-                alias : {
-                    '$-debug' : 'gallery/jquery/1.8.3/jquery',
-                    '$' : 'gallery/jquery/1.8.3/jquery',
-                    'Widget' : 'arale/widget/1.0.2/widget-debug'
-                },
-                debug: true
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Widget</title>
+    <script src="sea-modules/seajs/1.3.1/sea.js"></script>
+    <script>
+        seajs.config({
+            alias : {
+                '$-debug' : 'gallery/jquery/1.8.3/jquery',
+                '$' : 'gallery/jquery/1.8.3/jquery',
+                'Widget' : 'arale/widget/1.0.2/widget-debug'
+            },
+            debug: true
+        });
+        seajs.use(['$', 'Widget'], function($, Widget) {
+            var widget = new Widget({
+                template : '<div class="content">Widget.</div>'
             });
-            seajs.use(['$', 'Widget'], function($, Widget) {
-                var widget = new Widget({
-                    template : '<div class="content">Widget.</div>'
-                });
 
-                widget.delegateEvents('click', function() {
-                    alert('Click.');
-                });
-
-                widget.render();
-
-                $('#destroy').on('click', function() {
-                    alert('destroy');
-                    widget.destroy();
-                });
+            widget.delegateEvents('click', function() {
+                alert('Click.');
             });
-        </script>
-        <style>
-            .content {
-                background-color: red;
-                height: 100px;
-                line-height: 100px;
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-        <button id="destroy">
-            destroy
-        </button>
-    </body>
+
+            widget.render();
+
+            $('#destroy').on('click', function() {
+                alert('destroy');
+                widget.destroy();
+            });
+        });
+    </script>
+    <style>
+        .content {
+            background-color: red;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="destroy">
+        destroy
+    </button>
+</body>
 </html>
