@@ -11,8 +11,17 @@ define(function(require, exports, module) {
     });
     
     describe('Equal', function() {
-        it('equal', function() {
+        it('number and string', function() {
             expect('1').not.to.be(1);
+        });
+        it('object', function() {
+            expect({}).not.to.be({});
+        });
+    });
+
+    describe('Eql', function() {
+        it('object', function() {
+            expect({a:1,b:2}).to.eql({b:2,a:1});
         });
     });
 
@@ -29,6 +38,19 @@ define(function(require, exports, module) {
             };
             expect(fn).to.throwError();
         });
+    });
 
+    describe('Slow', function() {
+        this.slow(100);
+        it('100ms', function(done) {
+            setTimeout(done, 150);
+        });
+    });
+
+    describe('Timeout', function() {
+        this.timeout(100);
+        it('100ms', function(done) {
+            setTimeout(done, 50);
+        });
     });
 });
