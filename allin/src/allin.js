@@ -7,5 +7,5 @@ define(function(require, exports, module) {
         return new Allin();
     };
     
-    return Allin;
+    module.exports = Allin;
 });

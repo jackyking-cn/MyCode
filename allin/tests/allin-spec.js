@@ -5,14 +5,17 @@ define(function(require) {
         allin;
 
     describe('Allin', function() {
-
-        it('API', function() {
-            expect(typeof Allin.init).to.equal('function');
+        describe('API', function() {
+            it('init', function() {
+                expect(Allin.init).to.be.a('function');
+            });
         });
 
-        it('Allin.init()', function () {
-            allin = Allin.init();
-            expect(allin instanceof Allin).to.equal(true);
+        describe('init()', function() {
+            it('init() should return object that instance of Allin', function() {
+                allin = Allin.init();
+                expect(allin instanceof Allin).to.ok();
+            });
         });
     });
 
